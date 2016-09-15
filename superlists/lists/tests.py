@@ -78,7 +78,7 @@ class ItemModelTest(TestCase):
         self.assertEqual(first_saved_item.text, 'The first (ever) list item')
         self.assertEqual(first_saved_item.list, list_)
         self.assertEqual(second_saved_item.text, 'Item the second')
-        self.assertEqual(second_saved_item.list, list_)     
+        self.assertEqual(second_saved_item.list, list_) 
         
 class NewListTest(TestCase):
             
