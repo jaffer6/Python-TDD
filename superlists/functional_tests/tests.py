@@ -12,8 +12,9 @@ from selenium.webdriver.common.keys import Keys
 import unittest
 import time
 from django.test.testcases import LiveServerTestCase
+from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 
-class NewVisitorTest(LiveServerTestCase):
+class NewVisitorTest(StaticLiveServerTestCase):
     
     def setUp(self):
         # Runs before each test
@@ -104,4 +105,4 @@ class NewVisitorTest(LiveServerTestCase):
                 
         #She notices the inputbox is nicely centered
         inputbox = self.browser.find_element_by_id('id_new_item')
-        self.assertAlmostEqual(inputbox.location['x'] + inputbox.size['width'] /2, 512, delta=5)
+        self.assertAlmostEqual(inputbox.location['x'] + inputbox.size['width'] /2, 512, delta=10)
