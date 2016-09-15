@@ -1,9 +1,9 @@
 from django.test import TestCase
 from django.core.urlresolvers import resolve
-from superlists.lists.views import home_page
+from lists.views import home_page
 from django.http.request import HttpRequest
 from django.template.loader import render_to_string
-from superlists.lists.models import Item
+from lists.models import Item
 
 class HomePageTest(TestCase):
     
