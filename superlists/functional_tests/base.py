@@ -35,6 +35,7 @@ class FunctionalTest(StaticLiveServerTestCase):
         
     def tearDown(self):
         # Runs after each test
+        self.browser.refresh()
         self.browser.quit()
     
     def check_for_row_in_list_table(self, row_text):
