@@ -1,12 +1,8 @@
 from django.test import TestCase
-from django.core.urlresolvers import resolve
-from lists.views import home_page
-from django.http.request import HttpRequest
-from django.template.loader import render_to_string
-from lists.models import Item, List
 from django.utils.html import escape
-from lists.forms import ItemForm
-from lists.forms import EMPTY_LIST_ERROR, DUPLICATE_ITEM_ERROR, ExistingListItemForm
+
+from lists.models import Item, List
+from lists.forms import EMPTY_LIST_ERROR, DUPLICATE_ITEM_ERROR, ExistingListItemForm, ItemForm
 from unittest.case import skip
 
 
@@ -20,7 +16,6 @@ class HomePageTest(TestCase):
         response = self.client.get('/')
         self.assertIsInstance(response.context['form'], ItemForm)
 
-        
         
 class ListViewTest(TestCase):
     def post_invalid_input(self):
